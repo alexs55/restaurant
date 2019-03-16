@@ -21,10 +21,10 @@ module.exports = function(app) {
       console.log(newreservation);
       if (reservations.length < 5) {
           reservations.push(newreservation);
-          res.json(newreservation);
+       
       } else {
           waitlist.push(newreservation)
-          res.json(newreservation);
+      
       }
   });
 
