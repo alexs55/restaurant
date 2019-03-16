@@ -67,14 +67,28 @@
     // Question: What does this code do?
     $("#add-btn").on("click", function(event) {
       event.preventDefault();
+
+       if($("#name").val().trim() === "" || $("#phoneNumber").val().trim() === "" || $("#email").val().trim() === ""|| $("#uniqueID").val().trim() ===""){
+         $("#successMsg").text("Fill everything!"); 
+         return;
+       }
+       else{
+         $("#successMsg").text("Reservation successfully added!"); 
+       }
+
       var newReservation = {
         customerName: $("#name").val().trim(),
         phoneNumber: $("#phoneNumber").val().trim(),
         customerEmail: $("#email").val().trim(),
         customerID: $("#uniqueID").val().trim()
       };
-      $("#successMsg").text("Reservation successfully added!"); 
+     
 
+
+      $("#name").val("");
+      $("#phoneNumber").val("");
+      $("#email").val("");
+      $("#uniqueID").val("");
       $.post("/api/reservations", newReservation)
         .then(function(data) {
           console.log("add.html", data);
