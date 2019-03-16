@@ -1,14 +1,18 @@
 {
-  "name": "saturdaymarch16",
+  "name": "restaurant",
   "version": "1.0.0",
   "description": "",
   "main": "restaurant.js",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node restaurant.js",
+    "watch": "nodemon restaurant.js"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.4"
-  }
+  "license": "ISC"
 }
+
